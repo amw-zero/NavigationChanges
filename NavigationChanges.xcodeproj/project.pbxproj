@@ -8,11 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		FACCF13621D5464E0083B090 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACCF13521D5464E0083B090 /* AppDelegate.swift */; };
-		FACCF13821D5464E0083B090 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACCF13721D5464E0083B090 /* ViewController.swift */; };
+		FACCF13821D5464E0083B090 /* SelectItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACCF13721D5464E0083B090 /* SelectItemVC.swift */; };
 		FACCF13B21D5464E0083B090 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FACCF13921D5464E0083B090 /* Main.storyboard */; };
 		FACCF13D21D546510083B090 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FACCF13C21D546510083B090 /* Assets.xcassets */; };
 		FACCF14021D546510083B090 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FACCF13E21D546510083B090 /* LaunchScreen.storyboard */; };
 		FACCF14B21D546520083B090 /* NavigationChangesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACCF14A21D546520083B090 /* NavigationChangesTests.swift */; };
+		FACCF15621D55AE70083B090 /* SelectLocationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACCF15521D55AE70083B090 /* SelectLocationVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,7 +29,7 @@
 /* Begin PBXFileReference section */
 		FACCF13221D5464E0083B090 /* NavigationChanges.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NavigationChanges.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FACCF13521D5464E0083B090 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FACCF13721D5464E0083B090 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FACCF13721D5464E0083B090 /* SelectItemVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectItemVC.swift; sourceTree = "<group>"; };
 		FACCF13A21D5464E0083B090 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FACCF13C21D546510083B090 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FACCF13F21D546510083B090 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -36,6 +37,7 @@
 		FACCF14621D546520083B090 /* NavigationChangesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NavigationChangesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FACCF14A21D546520083B090 /* NavigationChangesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationChangesTests.swift; sourceTree = "<group>"; };
 		FACCF14C21D546520083B090 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FACCF15521D55AE70083B090 /* SelectLocationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectLocationVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,11 +80,12 @@
 			isa = PBXGroup;
 			children = (
 				FACCF13521D5464E0083B090 /* AppDelegate.swift */,
-				FACCF13721D5464E0083B090 /* ViewController.swift */,
-				FACCF13921D5464E0083B090 /* Main.storyboard */,
 				FACCF13C21D546510083B090 /* Assets.xcassets */,
-				FACCF13E21D546510083B090 /* LaunchScreen.storyboard */,
 				FACCF14121D546510083B090 /* Info.plist */,
+				FACCF13E21D546510083B090 /* LaunchScreen.storyboard */,
+				FACCF13921D5464E0083B090 /* Main.storyboard */,
+				FACCF13721D5464E0083B090 /* SelectItemVC.swift */,
+				FACCF15521D55AE70083B090 /* SelectLocationVC.swift */,
 			);
 			path = NavigationChanges;
 			sourceTree = "<group>";
@@ -197,7 +200,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FACCF13821D5464E0083B090 /* ViewController.swift in Sources */,
+				FACCF15621D55AE70083B090 /* SelectLocationVC.swift in Sources */,
+				FACCF13821D5464E0083B090 /* SelectItemVC.swift in Sources */,
 				FACCF13621D5464E0083B090 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
