@@ -10,9 +10,6 @@ import XCTest
 import UIKit
 @testable import NavigationChanges
 
-// Select Item -> Select Location -> Confirmation
-// Select Location -> Select Item -> Select Time -> Confirmation
-
 class NavigationChangesTests: XCTestCase {
     func testNavigatingToLocationSelection() {
         let selectItemVC = SelectItemVC()
