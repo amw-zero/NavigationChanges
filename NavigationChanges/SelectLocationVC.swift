@@ -13,15 +13,19 @@ class SelectLocationVC: UIViewController {
         super.viewDidLoad()
         layoutView()
     }
+    @objc func navigateToConfirmationViewController() {
+        navigationController?.pushViewController(ConfirmationVC(), animated: false)
+    }
     func layoutView() {
         view.backgroundColor = .white
-        let label = UILabel()
-        label.text = "Select Location"
-        label.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(label)
+        let button = UIButton(type: .system)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("Select Location", for: .normal)
+        button.addTarget(self, action: #selector(navigateToConfirmationViewController), for: .touchUpInside)
+        view.addSubview(button)
         NSLayoutConstraint.activate([
-            label.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            label.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+            button.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            button.centerYAnchor.constraint(equalTo: view.centerYAnchor)
         ])
     }
 }

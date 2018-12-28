@@ -14,6 +14,7 @@
 		FACCF14021D546510083B090 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FACCF13E21D546510083B090 /* LaunchScreen.storyboard */; };
 		FACCF14B21D546520083B090 /* NavigationChangesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACCF14A21D546520083B090 /* NavigationChangesTests.swift */; };
 		FACCF15621D55AE70083B090 /* SelectLocationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACCF15521D55AE70083B090 /* SelectLocationVC.swift */; };
+		FACCF15821D6489E0083B090 /* ConfirmationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACCF15721D6489E0083B090 /* ConfirmationVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		FACCF14A21D546520083B090 /* NavigationChangesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationChangesTests.swift; sourceTree = "<group>"; };
 		FACCF14C21D546520083B090 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FACCF15521D55AE70083B090 /* SelectLocationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectLocationVC.swift; sourceTree = "<group>"; };
+		FACCF15721D6489E0083B090 /* ConfirmationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 			children = (
 				FACCF13521D5464E0083B090 /* AppDelegate.swift */,
 				FACCF13C21D546510083B090 /* Assets.xcassets */,
+				FACCF15721D6489E0083B090 /* ConfirmationVC.swift */,
 				FACCF14121D546510083B090 /* Info.plist */,
 				FACCF13E21D546510083B090 /* LaunchScreen.storyboard */,
 				FACCF13921D5464E0083B090 /* Main.storyboard */,
@@ -201,6 +204,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FACCF15621D55AE70083B090 /* SelectLocationVC.swift in Sources */,
+				FACCF15821D6489E0083B090 /* ConfirmationVC.swift in Sources */,
 				FACCF13821D5464E0083B090 /* SelectItemVC.swift in Sources */,
 				FACCF13621D5464E0083B090 /* AppDelegate.swift in Sources */,
 			);
