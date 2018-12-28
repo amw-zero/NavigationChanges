@@ -10,12 +10,19 @@ import XCTest
 import UIKit
 @testable import NavigationChanges
 
+class MockOrderedNavigator: OrderedNavigation {
+    var nextReceived = false
+    func next() {
+        nextReceived = true
+    }
+}
+
 class NavigationChangesTests: XCTestCase {
     func testNavigatingToLocationSelection() {
-        let selectItemVC = SelectItemVC()
-        let navigationController = UINavigationController(rootViewController: selectItemVC)
+        let navigator = MockOrderedNavigator()
+        let selectItemVC = SelectItemVC(navigator: navigator)
         selectItemVC.navigateToSelectLocationViewController()
-        XCTAssert(navigationController.topViewController is SelectLocationVC)
+        XCTAssert(navigator.nextReceived)
     }
     func testNavigatingToConfirmation() {
         let selectLocationVC = SelectLocationVC()
