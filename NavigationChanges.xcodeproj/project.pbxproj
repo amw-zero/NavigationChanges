@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FAC6C98721D6BE27001E80EA /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC6C98621D6BE27001E80EA /* Navigator.swift */; };
 		FACCF13621D5464E0083B090 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACCF13521D5464E0083B090 /* AppDelegate.swift */; };
 		FACCF13821D5464E0083B090 /* SelectItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACCF13721D5464E0083B090 /* SelectItemVC.swift */; };
 		FACCF13B21D5464E0083B090 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FACCF13921D5464E0083B090 /* Main.storyboard */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FAC6C98621D6BE27001E80EA /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
 		FACCF13221D5464E0083B090 /* NavigationChanges.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NavigationChanges.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FACCF13521D5464E0083B090 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FACCF13721D5464E0083B090 /* SelectItemVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectItemVC.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 				FACCF14121D546510083B090 /* Info.plist */,
 				FACCF13E21D546510083B090 /* LaunchScreen.storyboard */,
 				FACCF13921D5464E0083B090 /* Main.storyboard */,
+				FAC6C98621D6BE27001E80EA /* Navigator.swift */,
 				FACCF13721D5464E0083B090 /* SelectItemVC.swift */,
 				FACCF15521D55AE70083B090 /* SelectLocationVC.swift */,
 			);
@@ -263,6 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FACCF15621D55AE70083B090 /* SelectLocationVC.swift in Sources */,
+				FAC6C98721D6BE27001E80EA /* Navigator.swift in Sources */,
 				FACCF15821D6489E0083B090 /* ConfirmationVC.swift in Sources */,
 				FACCF13821D5464E0083B090 /* SelectItemVC.swift in Sources */,
 				FACCF13621D5464E0083B090 /* AppDelegate.swift in Sources */,

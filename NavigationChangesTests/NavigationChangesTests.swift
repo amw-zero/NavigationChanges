@@ -23,4 +23,9 @@ class NavigationChangesTests: XCTestCase {
         selectLocationVC.navigateToConfirmationViewController()
         XCTAssert(navigationController.topViewController is ConfirmationVC)
     }
+    func testOrderedNavigator() {
+        let viewControllers = [.selectItem, .selectLocation, .confirmation]
+        let navigator = OrderedNavigator(viewControllers: viewControllers)
+        
+    }
 }
