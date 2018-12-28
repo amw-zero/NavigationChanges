@@ -13,15 +13,15 @@ class SelectItemVC: UIViewController {
         super.viewDidLoad()
         layoutView()
     }
-    @objc func navigateToSelectLocationViewController() {
-        navigationController?.pushViewController(SelectLocationVC(), animated: false)
+    @objc func navigateToConfirmationViewController() {
+        navigationController?.pushViewController(ConfirmationVC(), animated: false)
     }
     func layoutView() {
         view.backgroundColor = .white
         let button = UIButton(type: .system)
         button.setTitle("Select Item", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.addTarget(self, action: #selector(navigateToSelectLocationViewController), for: .touchUpInside)
+        button.addTarget(self, action: #selector(navigateToConfirmationViewController), for: .touchUpInside)
         view.addSubview(button)
         NSLayoutConstraint.activate([
             button.centerXAnchor.constraint(equalTo: view.centerXAnchor),

@@ -11,13 +11,13 @@ import UIKit
 @testable import NavigationChanges
 
 class NavigationChangesTests: XCTestCase {
-    func testNavigatingToLocationSelection() {
+    func testNavigatingToConfirmation() {
         let selectItemVC = SelectItemVC()
         let navigationController = UINavigationController(rootViewController: selectItemVC)
-        selectItemVC.navigateToSelectLocationViewController()
-        XCTAssert(navigationController.topViewController is SelectLocationVC)
+        selectItemVC.navigateToConfirmationViewController()
+        XCTAssert(navigationController.topViewController is ConfirmationVC)
     }
-    func testNavigatingToConfirmation() {
+    func testNavigatingToSelectItem() {
         let selectLocationVC = SelectLocationVC()
         let navigationController = UINavigationController(rootViewController: selectLocationVC)
         selectLocationVC.navigateToConfirmationViewController()
