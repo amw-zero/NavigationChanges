@@ -17,8 +17,10 @@ class SelectLocationVC: UIViewController {
         navigationController?.pushViewController(ConfirmationVC(), animated: false)
     }
     func layoutView() {
+        view.accessibilityIdentifier = "selectLocationView"
         view.backgroundColor = .white
         let button = UIButton(type: .system)
+        button.accessibilityIdentifier = "selectLocationButton"
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Select Location", for: .normal)
         button.addTarget(self, action: #selector(navigateToConfirmationViewController), for: .touchUpInside)

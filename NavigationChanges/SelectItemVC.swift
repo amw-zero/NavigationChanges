@@ -19,6 +19,7 @@ class SelectItemVC: UIViewController {
     func layoutView() {
         view.backgroundColor = .white
         let button = UIButton(type: .system)
+        button.accessibilityIdentifier = "selectItemButton"
         button.setTitle("Select Item", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(navigateToSelectLocationViewController), for: .touchUpInside)

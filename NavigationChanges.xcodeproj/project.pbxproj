@@ -15,10 +15,18 @@
 		FACCF14B21D546520083B090 /* NavigationChangesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACCF14A21D546520083B090 /* NavigationChangesTests.swift */; };
 		FACCF15621D55AE70083B090 /* SelectLocationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACCF15521D55AE70083B090 /* SelectLocationVC.swift */; };
 		FACCF15821D6489E0083B090 /* ConfirmationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACCF15721D6489E0083B090 /* ConfirmationVC.swift */; };
+		FACCF16421D69FA60083B090 /* NavigationChangesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACCF16321D69FA60083B090 /* NavigationChangesUITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		FACCF14721D546520083B090 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FACCF12A21D5464D0083B090 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FACCF13121D5464D0083B090;
+			remoteInfo = NavigationChanges;
+		};
+		FACCF16621D69FA60083B090 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = FACCF12A21D5464D0083B090 /* Project object */;
 			proxyType = 1;
@@ -40,6 +48,9 @@
 		FACCF14C21D546520083B090 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FACCF15521D55AE70083B090 /* SelectLocationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectLocationVC.swift; sourceTree = "<group>"; };
 		FACCF15721D6489E0083B090 /* ConfirmationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationVC.swift; sourceTree = "<group>"; };
+		FACCF16121D69FA60083B090 /* NavigationChangesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NavigationChangesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FACCF16321D69FA60083B090 /* NavigationChangesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationChangesUITests.swift; sourceTree = "<group>"; };
+		FACCF16521D69FA60083B090 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +68,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FACCF15E21D69FA60083B090 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -65,6 +83,7 @@
 			children = (
 				FACCF13421D5464E0083B090 /* NavigationChanges */,
 				FACCF14921D546520083B090 /* NavigationChangesTests */,
+				FACCF16221D69FA60083B090 /* NavigationChangesUITests */,
 				FACCF13321D5464E0083B090 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -74,6 +93,7 @@
 			children = (
 				FACCF13221D5464E0083B090 /* NavigationChanges.app */,
 				FACCF14621D546520083B090 /* NavigationChangesTests.xctest */,
+				FACCF16121D69FA60083B090 /* NavigationChangesUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -100,6 +120,15 @@
 				FACCF14C21D546520083B090 /* Info.plist */,
 			);
 			path = NavigationChangesTests;
+			sourceTree = "<group>";
+		};
+		FACCF16221D69FA60083B090 /* NavigationChangesUITests */ = {
+			isa = PBXGroup;
+			children = (
+				FACCF16321D69FA60083B090 /* NavigationChangesUITests.swift */,
+				FACCF16521D69FA60083B090 /* Info.plist */,
+			);
+			path = NavigationChangesUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,6 +169,24 @@
 			productReference = FACCF14621D546520083B090 /* NavigationChangesTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		FACCF16021D69FA60083B090 /* NavigationChangesUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FACCF16A21D69FA60083B090 /* Build configuration list for PBXNativeTarget "NavigationChangesUITests" */;
+			buildPhases = (
+				FACCF15D21D69FA60083B090 /* Sources */,
+				FACCF15E21D69FA60083B090 /* Frameworks */,
+				FACCF15F21D69FA60083B090 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FACCF16721D69FA60083B090 /* PBXTargetDependency */,
+			);
+			name = NavigationChangesUITests;
+			productName = NavigationChangesUITests;
+			productReference = FACCF16121D69FA60083B090 /* NavigationChangesUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -154,6 +201,10 @@
 						CreatedOnToolsVersion = 10.1;
 					};
 					FACCF14521D546520083B090 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = FACCF13121D5464D0083B090;
+					};
+					FACCF16021D69FA60083B090 = {
 						CreatedOnToolsVersion = 10.1;
 						TestTargetID = FACCF13121D5464D0083B090;
 					};
@@ -174,6 +225,7 @@
 			targets = (
 				FACCF13121D5464D0083B090 /* NavigationChanges */,
 				FACCF14521D546520083B090 /* NavigationChangesTests */,
+				FACCF16021D69FA60083B090 /* NavigationChangesUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -190,6 +242,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		FACCF14421D546520083B090 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FACCF15F21D69FA60083B090 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -218,6 +277,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FACCF15D21D69FA60083B090 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FACCF16421D69FA60083B090 /* NavigationChangesUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -225,6 +292,11 @@
 			isa = PBXTargetDependency;
 			target = FACCF13121D5464D0083B090 /* NavigationChanges */;
 			targetProxy = FACCF14721D546520083B090 /* PBXContainerItemProxy */;
+		};
+		FACCF16721D69FA60083B090 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FACCF13121D5464D0083B090 /* NavigationChanges */;
+			targetProxy = FACCF16621D69FA60083B090 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -438,6 +510,42 @@
 			};
 			name = Release;
 		};
+		FACCF16821D69FA60083B090 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = NavigationChangesUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.vts.NavigationChangesUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = NavigationChanges;
+			};
+			name = Debug;
+		};
+		FACCF16921D69FA60083B090 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = NavigationChangesUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.vts.NavigationChangesUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = NavigationChanges;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -464,6 +572,15 @@
 			buildConfigurations = (
 				FACCF15321D546520083B090 /* Debug */,
 				FACCF15421D546520083B090 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FACCF16A21D69FA60083B090 /* Build configuration list for PBXNativeTarget "NavigationChangesUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FACCF16821D69FA60083B090 /* Debug */,
+				FACCF16921D69FA60083B090 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
