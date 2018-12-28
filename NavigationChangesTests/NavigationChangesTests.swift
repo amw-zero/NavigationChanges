@@ -20,7 +20,7 @@ class NavigationChangesTests: XCTestCase {
     func testNavigatingToSelectItem() {
         let selectLocationVC = SelectLocationVC()
         let navigationController = UINavigationController(rootViewController: selectLocationVC)
-        selectLocationVC.navigateToConfirmationViewController()
-        XCTAssert(navigationController.topViewController is ConfirmationVC)
+        selectLocationVC.navigateToSelectItemViewController()
+        XCTAssert(navigationController.topViewController is SelectItemVC)
     }
 }
