@@ -25,9 +25,9 @@ class NavigationChangesTests: XCTestCase {
         XCTAssert(navigator.nextReceived)
     }
     func testNavigatingToConfirmation() {
-        let selectLocationVC = SelectLocationVC()
-        let navigationController = UINavigationController(rootViewController: selectLocationVC)
-        selectLocationVC.navigateToConfirmationViewController()
-        XCTAssert(navigationController.topViewController is ConfirmationVC)
+        let navigator = MockOrderedNavigator()
+        let selectLocationVC = SelectLocationVC(navigator: navigator)
+        selectLocationVC.onLocationSelected()
+        XCTAssert(navigator.nextReceived)
     }
 }
