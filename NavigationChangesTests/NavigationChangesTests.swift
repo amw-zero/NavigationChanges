@@ -12,12 +12,8 @@ import UIKit
 
 class MockOrderedNavigator: OrderedNavigation {
     var nextReceived = false
-    var previousReceived = false
     func next() {
         nextReceived = true
-    }
-    func previous() {
-        previousReceived = true
     }
 }
 
