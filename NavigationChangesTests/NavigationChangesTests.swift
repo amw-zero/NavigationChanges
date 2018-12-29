@@ -19,20 +19,9 @@ class NavigationChangesTests: XCTestCase {
         selectItemVC.selectItem()
         XCTAssert(buttonClicked)
     }
-    // Wizard
-    func testOrderedNavigatorNext() {
-        let viewControllers: [View] = [.selectItem, .selectLocation]
-        let wizard = Wizard(viewControllers: viewControllers)
-        let nextWizard = wizard.next()
-        XCTAssertEqual(nextWizard.current, .selectLocation)
-        XCTAssertEqual(nextWizard.currentIndex, 1)
-    }
     // Navigator
     func testNavigationExecution() {
-        let wizard = Wizard(viewControllers: [
-            .selectItem, .selectLocation
-        ])
-        let navigator = CheckoutCoordinator(wizard: wizard)
+        let navigator = CheckoutCoordinator(views: [.selectItem, .selectLocation])
         navigator.next()
         XCTAssert(navigator.navigationController.topViewController is SelectLocationVC)
     }
