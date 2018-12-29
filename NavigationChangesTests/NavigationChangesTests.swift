@@ -7,25 +7,33 @@
 //
 
 import XCTest
-import UIKit
 @testable import NavigationChanges
 
 class NavigationChangesTests: XCTestCase {
-    func testNavigatingToLocationSelection() {
-        let selectItemVC = SelectItemVC()
-        let navigationController = UINavigationController(rootViewController: selectItemVC)
-        selectItemVC.navigateToSelectLocationViewController()
-        XCTAssert(navigationController.topViewController is SelectLocationVC)
+    // SelectedItemVC
+    func testSelectItemButtonClick() {
+        var buttonClicked = false
+        let selectItemVC = SelectItemVC {
+            buttonClicked = true
+        }
+        selectItemVC.selectItem()
+        XCTAssert(buttonClicked)
     }
-    func testNavigatingToConfirmation() {
-        let selectLocationVC = SelectLocationVC()
-        let navigationController = UINavigationController(rootViewController: selectLocationVC)
-        selectLocationVC.navigateToConfirmationViewController()
-        XCTAssert(navigationController.topViewController is ConfirmationVC)
+    // Wizard
+    func testOrderedNavigatorNext() {
+        let viewControllers: [ViewController] = [.selectItem, .selectLocation]
+        let wizard = Wizard(viewControllers: viewControllers)
+        let nextWizard = wizard.next()
+        XCTAssertEqual(nextWizard.current, .selectLocation)
+        XCTAssertEqual(nextWizard.currentIndex, 1)
     }
-    func testOrderedNavigator() {
-        let viewControllers = [.selectItem, .selectLocation, .confirmation]
-        let navigator = OrderedNavigator(viewControllers: viewControllers)
-        
+    // Navigator
+    func testNavigationExecution() {
+        let wizard = Wizard(viewControllers: [
+            .selectItem, .selectLocation
+        ])
+        let navigator = NavigationControllerNavigator(wizard: wizard)
+        navigator.next()
+        XCTAssert(navigator.navigationController.topViewController is SelectLocationVC)
     }
 }

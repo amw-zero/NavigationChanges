@@ -9,12 +9,21 @@
 import UIKit
 
 class SelectLocationVC: UIViewController {
+    let onButtonClick: () -> Void
+    init(onButtonClick: @escaping () -> Void) {
+        self.onButtonClick = onButtonClick
+        super.init(nibName: nil, bundle: nil)
+    }
+    required init?(coder aDecoder: NSCoder) {
+        self.onButtonClick = { }
+        super.init(coder: aDecoder)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         layoutView()
     }
-    @objc func navigateToConfirmationViewController() {
-        navigationController?.pushViewController(ConfirmationVC(), animated: false)
+    @objc func selectLocation() {
+        onButtonClick()
     }
     func layoutView() {
         view.accessibilityIdentifier = "selectLocationView"
@@ -23,7 +32,7 @@ class SelectLocationVC: UIViewController {
         button.accessibilityIdentifier = "selectLocationButton"
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Select Location", for: .normal)
-        button.addTarget(self, action: #selector(navigateToConfirmationViewController), for: .touchUpInside)
+        button.addTarget(self, action: #selector(selectLocation), for: .touchUpInside)
         view.addSubview(button)
         NSLayoutConstraint.activate([
             button.centerXAnchor.constraint(equalTo: view.centerXAnchor),

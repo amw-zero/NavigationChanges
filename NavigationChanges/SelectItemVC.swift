@@ -9,12 +9,21 @@
 import UIKit
 
 class SelectItemVC: UIViewController {
+    let onButtonClick: () -> Void
+    init(onButtonClick: @escaping () -> Void) {
+        self.onButtonClick = onButtonClick
+        super.init(nibName: nil, bundle: nil)
+    }
+    required init?(coder aDecoder: NSCoder) {
+        self.onButtonClick = { }
+        super.init(coder: aDecoder)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         layoutView()
     }
-    @objc func navigateToSelectLocationViewController() {
-        navigationController?.pushViewController(SelectLocationVC(), animated: false)
+    @objc func selectItem() {
+        onButtonClick()
     }
     func layoutView() {
         view.backgroundColor = .white
@@ -22,7 +31,7 @@ class SelectItemVC: UIViewController {
         button.accessibilityIdentifier = "selectItemButton"
         button.setTitle("Select Item", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.addTarget(self, action: #selector(navigateToSelectLocationViewController), for: .touchUpInside)
+        button.addTarget(self, action: #selector(selectItem), for: .touchUpInside)
         view.addSubview(button)
         NSLayoutConstraint.activate([
             button.centerXAnchor.constraint(equalTo: view.centerXAnchor),
