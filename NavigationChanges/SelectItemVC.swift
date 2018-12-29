@@ -9,21 +9,13 @@
 import UIKit
 
 class SelectItemVC: UIViewController {
-    let navigator: OrderedNavigation
-    init(navigator: OrderedNavigation) {
-        self.navigator = navigator
-        super.init(nibName: nil, bundle: nil)
-    }
-    required init?(coder aDecoder: NSCoder) {
-        navigator = OrderedNavigator()
-        super.init(coder: aDecoder)
-    }
+    weak var navigator: OrderedNavigation?
     override func viewDidLoad() {
         super.viewDidLoad()
         layoutView()
     }
     @objc func onItemSelected() {
-        navigator.next()
+        navigator?.next()
     }
     func layoutView() {
         view.backgroundColor = .white

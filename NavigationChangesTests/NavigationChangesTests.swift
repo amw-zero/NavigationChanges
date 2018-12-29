@@ -12,21 +12,27 @@ import UIKit
 
 class MockOrderedNavigator: OrderedNavigation {
     var nextReceived = false
+    var previousReceived = false
     func next() {
         nextReceived = true
+    }
+    func previous() {
+        previousReceived = true
     }
 }
 
 class NavigationChangesTests: XCTestCase {
     func testNavigatingToLocationSelection() {
         let navigator = MockOrderedNavigator()
-        let selectItemVC = SelectItemVC(navigator: navigator)
-        selectItemVC.navigateToSelectLocationViewController()
+        let selectItemVC = SelectItemVC()
+        selectItemVC.navigator = navigator
+        selectItemVC.onItemSelected()
         XCTAssert(navigator.nextReceived)
     }
     func testNavigatingToConfirmation() {
         let navigator = MockOrderedNavigator()
-        let selectLocationVC = SelectLocationVC(navigator: navigator)
+        let selectLocationVC = SelectLocationVC()
+        selectLocationVC.navigator = navigator
         selectLocationVC.onLocationSelected()
         XCTAssert(navigator.nextReceived)
     }

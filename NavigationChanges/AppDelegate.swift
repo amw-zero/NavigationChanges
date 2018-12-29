@@ -11,13 +11,12 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
+    var checkoutNavigator: OrderedNavigator?
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
-        let navigator = OrderedNavigator()
-        let selectItemVC = SelectItemVC(navigator: navigator)
-        window?.rootViewController = UINavigationController(rootViewController: selectItemVC)
+        checkoutNavigator = makeCheckoutNavigator()
+        window?.rootViewController = checkoutNavigator?.initialViewController()
         window?.makeKeyAndVisible()
         return true
     }
 }
-
