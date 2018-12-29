@@ -22,7 +22,7 @@ class SelectItemVC: UIViewController {
         super.viewDidLoad()
         layoutView()
     }
-    @objc func navigateToSelectLocationViewController() {
+    @objc func onItemSelected() {
         navigator.next()
     }
     func layoutView() {
@@ -30,7 +30,7 @@ class SelectItemVC: UIViewController {
         let button = UIButton(type: .system)
         button.setTitle("Select Item", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.addTarget(self, action: #selector(navigateToSelectLocationViewController), for: .touchUpInside)
+        button.addTarget(self, action: #selector(onItemSelected), for: .touchUpInside)
         view.addSubview(button)
         NSLayoutConstraint.activate([
             button.centerXAnchor.constraint(equalTo: view.centerXAnchor),
