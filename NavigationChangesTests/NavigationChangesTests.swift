@@ -21,7 +21,7 @@ class NavigationChangesTests: XCTestCase {
     }
     // Wizard
     func testOrderedNavigatorNext() {
-        let viewControllers: [ViewController] = [.selectItem, .selectLocation]
+        let viewControllers: [View] = [.selectItem, .selectLocation]
         let wizard = Wizard(viewControllers: viewControllers)
         let nextWizard = wizard.next()
         XCTAssertEqual(nextWizard.current, .selectLocation)
@@ -32,7 +32,7 @@ class NavigationChangesTests: XCTestCase {
         let wizard = Wizard(viewControllers: [
             .selectItem, .selectLocation
         ])
-        let navigator = NavigationControllerNavigator(wizard: wizard)
+        let navigator = CheckoutCoordinator(wizard: wizard)
         navigator.next()
         XCTAssert(navigator.navigationController.topViewController is SelectLocationVC)
     }

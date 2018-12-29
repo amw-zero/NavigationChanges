@@ -1,5 +1,5 @@
 //
-//  Navigator.swift
+//  Checkout.swift
 //  NavigationChanges
 //
 //  Created by Alex on 12/28/18.
@@ -8,14 +8,14 @@
 
 import UIKit
 
-enum ViewController {
+enum View {
     case selectItem
     case selectLocation
     case confirmation
 }
 
-func MakeCheckoutWizardViewController(for viewController: ViewController, navigator: NavigationControllerNavigator) -> UIViewController {
-    switch viewController {
+func makeCheckoutViewController(for view: View, navigator: CheckoutCoordinator) -> UIViewController {
+    switch view {
     case .selectItem:
         return SelectItemVC { [weak navigator] in navigator?.next() }
     case .selectLocation:
@@ -26,13 +26,13 @@ func MakeCheckoutWizardViewController(for viewController: ViewController, naviga
 }
 
 struct Wizard {
-    let viewControllers: [ViewController]
+    let viewControllers: [View]
     let currentIndex: Int
-    init(viewControllers: [ViewController], currentIndex: Int = 0) {
+    init(viewControllers: [View], currentIndex: Int = 0) {
         self.viewControllers = viewControllers
         self.currentIndex = currentIndex
     }
-    var current: ViewController {
+    var current: View {
         return viewControllers[currentIndex]
     }
     func next() -> Wizard {
@@ -47,20 +47,20 @@ struct Wizard {
     }
 }
 
-class NavigationControllerNavigator {
+class CheckoutCoordinator {
     let navigationController = UINavigationController()
     var wizard: Wizard
     init(wizard: Wizard) {
         self.wizard = wizard
     }
-    func initial() -> UIViewController {
-        let vc = MakeCheckoutWizardViewController(for: wizard.viewControllers[0], navigator: self)
-            navigationController.setViewControllers([vc], animated: false)
-            return navigationController
+    func initialViewController() -> UIViewController {
+        let vc = makeCheckoutViewController(for: wizard.viewControllers[0], navigator: self)
+        navigationController.setViewControllers([vc], animated: false)
+        return navigationController
     }
     func next() {
         wizard = wizard.next()
-        let viewController = MakeCheckoutWizardViewController(for: wizard.current, navigator: self)
+        let viewController = makeCheckoutViewController(for: wizard.current, navigator: self)
         viewController.navigationItem.hidesBackButton = true
         viewController.navigationItem.leftBarButtonItem = UIBarButtonItem(
             title: "Back",
@@ -75,9 +75,9 @@ class NavigationControllerNavigator {
     }
 }
 
-func BindCheckoutWizard() -> NavigationControllerNavigator {
+func makeCheckoutCoordinator() -> CheckoutCoordinator {
     let wizard = Wizard(viewControllers: [
         .selectItem, .selectLocation, .confirmation
     ])
-    return NavigationControllerNavigator(wizard: wizard)
+    return CheckoutCoordinator(wizard: wizard)
 }
