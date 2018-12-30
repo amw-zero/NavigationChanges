@@ -8,38 +8,20 @@
 
 import UIKit
 
-enum View {
-    case selectItem
-    case selectLocation
-    case confirmation
-}
-
-func makeCheckoutViewController(for view: View, navigator: CheckoutCoordinator) -> UIViewController {
-    switch view {
-    case .selectItem:
-        return SelectItemVC { [weak navigator] in navigator?.next() }
-    case .selectLocation:
-        return SelectLocationVC { [weak navigator] in navigator?.next() }
-    case .confirmation:
-        return ConfirmationVC()
-    }
-}
-
 class CheckoutCoordinator {
     let navigationController = UINavigationController()
-    let views: [View]
+    let viewControllers: [UIViewController]
     var currentViewIndex = 0
-    init(views: [View]) {
-        self.views = views
+    init(viewControllers: [UIViewController]) {
+        self.viewControllers = viewControllers
+        navigationController.setViewControllers([viewControllers[0]], animated: false)
     }
     func initialViewController() -> UIViewController {
-        let vc = makeCheckoutViewController(for: views[0], navigator: self)
-        navigationController.setViewControllers([vc], animated: false)
         return navigationController
     }
     func next() {
         currentViewIndex += 1
-        let viewController = makeCheckoutViewController(for: views[currentViewIndex], navigator: self)
+        let viewController = viewControllers[currentViewIndex]
         viewController.navigationItem.hidesBackButton = true
         viewController.navigationItem.leftBarButtonItem = UIBarButtonItem(
             title: "Back",
@@ -55,5 +37,12 @@ class CheckoutCoordinator {
 }
 
 func makeCheckoutCoordinator() -> CheckoutCoordinator {
-    return CheckoutCoordinator(views: [.selectItem, .selectLocation, .confirmation])
+    let selectItemVC = SelectItemVC()
+    let selectLocationVC = SelectLocationVC()
+    let confirmationVC = ConfirmationVC()
+    let viewControllers = [selectItemVC, selectLocationVC, confirmationVC]
+    let coordinator = CheckoutCoordinator(viewControllers: viewControllers)
+    selectItemVC.onButtonClick = { [weak coordinator] in coordinator?.next() }
+    selectLocationVC.onButtonClick = { [weak coordinator] in coordinator?.next() }
+    return coordinator
 }

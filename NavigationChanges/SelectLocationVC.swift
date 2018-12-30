@@ -9,8 +9,8 @@
 import UIKit
 
 class SelectLocationVC: UIViewController {
-    let onButtonClick: () -> Void
-    init(onButtonClick: @escaping () -> Void) {
+    var onButtonClick: (() -> Void)?
+    init(onButtonClick: (() -> Void)? = nil) {
         self.onButtonClick = onButtonClick
         super.init(nibName: nil, bundle: nil)
     }
@@ -23,7 +23,7 @@ class SelectLocationVC: UIViewController {
         layoutView()
     }
     @objc func selectLocation() {
-        onButtonClick()
+        onButtonClick?()
     }
     func layoutView() {
         view.accessibilityIdentifier = "selectLocationView"

@@ -20,9 +20,10 @@ class NavigationChangesTests: XCTestCase {
         XCTAssert(buttonClicked)
     }
     // Navigator
-    func testNavigationExecution() {
-        let navigator = CheckoutCoordinator(views: [.selectItem, .selectLocation])
-        navigator.next()
-        XCTAssert(navigator.navigationController.topViewController is SelectLocationVC)
-    }
+    // Better test in better-cohesion branch
+//    func testNavigationExecution() {
+//        let navigator = CheckoutCoordinator(views: [.selectItem, .selectLocation])
+//        navigator.next()
+//        XCTAssert(navigator.navigationController.topViewController is SelectLocationVC)
+//    }
 }
