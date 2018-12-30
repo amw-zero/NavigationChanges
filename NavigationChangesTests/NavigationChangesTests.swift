@@ -32,4 +32,27 @@ class NavigationChangesTests: XCTestCase {
         selectLocationVC.onLocationSelected()
         XCTAssert(navigator.nextReceived)
     }
+    func testOrderedNavigationNextVC() {
+        let initialVC = UIViewController()
+        let secondVC = UIViewController()
+        let navigationController = UINavigationController()
+        let orderedNavigator = OrderedNavigator(
+            navigationController: navigationController,
+            viewControllers: [initialVC, secondVC])
+        orderedNavigator.next()
+        XCTAssertEqual(navigationController.topViewController, secondVC)
+        XCTAssertEqual(orderedNavigator.currentVCIndex, 1)
+    }
+    func testOrderedNavigationPreviousVC() {
+        let initialVC = UIViewController()
+        let secondVC = UIViewController()
+        let navigationController = UINavigationController()
+        let orderedNavigator = OrderedNavigator(
+            navigationController: navigationController,
+            viewControllers: [initialVC, secondVC])
+        orderedNavigator.next()
+        orderedNavigator.back()
+        XCTAssertEqual(navigationController.topViewController, initialVC)
+        XCTAssertEqual(orderedNavigator.currentVCIndex, 0)
+    }
 }
