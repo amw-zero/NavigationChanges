@@ -13,14 +13,15 @@ protocol OrderedNavigation: class {
 }
 
 class OrderedNavigator: OrderedNavigation {
-    let navigationController = UINavigationController()
+    let navigationController: UINavigationController
     let viewControllers: [UIViewController]
     var currentVCIndex = 0
-    init(viewControllers: [UIViewController]) {
+    init(navigationController: UINavigationController = UINavigationController(), viewControllers: [UIViewController]) {
+        self.navigationController = navigationController
         self.viewControllers = viewControllers
+        navigationController.setViewControllers([viewControllers[0]], animated: false)
     }
     func initialViewController() -> UIViewController {
-        navigationController.setViewControllers([viewControllers[0]], animated: false)
         return navigationController
     }
     func next() {
@@ -41,8 +42,8 @@ func makeCheckoutNavigator() -> OrderedNavigator {
     let selectLocationVC = SelectLocationVC()
     let confirmationVC = ConfirmationVC()
     let viewControllers = [
-        selectLocationVC,
         selectItemVC,
+        selectLocationVC,
         confirmationVC
     ]
     let navigator = OrderedNavigator(viewControllers: viewControllers)
