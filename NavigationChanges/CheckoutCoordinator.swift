@@ -21,19 +21,21 @@ class CheckoutCoordinator {
     }
     func next() {
         currentViewIndex += 1
-        let viewController = viewControllers[currentViewIndex]
-        viewController.navigationItem.hidesBackButton = true
-        viewController.navigationItem.leftBarButtonItem = UIBarButtonItem(
-            title: "Back",
-            style: .plain,
-            target: self,
-            action: #selector(back))
-        navigationController.pushViewController(viewController, animated: false)
+        navigationController.pushViewController(viewControllers[currentViewIndex], animated: false)
     }
     @objc func back() {
         currentViewIndex -= 1
         navigationController.popViewController(animated: false)
     }
+}
+
+func addControlledBackButton(to viewController: UIViewController, inCoordinator coordinator: CheckoutCoordinator) {
+    viewController.navigationItem.hidesBackButton = true
+    viewController.navigationItem.leftBarButtonItem = UIBarButtonItem(
+        title: "Back",
+        style: .plain,
+        target: coordinator,
+        action: #selector(CheckoutCoordinator.back))
 }
 
 func makeCheckoutCoordinator() -> CheckoutCoordinator {
@@ -42,6 +44,7 @@ func makeCheckoutCoordinator() -> CheckoutCoordinator {
     let confirmationVC = ConfirmationVC()
     let viewControllers = [selectItemVC, selectLocationVC, confirmationVC]
     let coordinator = CheckoutCoordinator(viewControllers: viewControllers)
+    viewControllers.forEach { addControlledBackButton(to: $0, inCoordinator: coordinator) }
     selectItemVC.onButtonClick = { [weak coordinator] in coordinator?.next() }
     selectLocationVC.onButtonClick = { [weak coordinator] in coordinator?.next() }
     return coordinator
